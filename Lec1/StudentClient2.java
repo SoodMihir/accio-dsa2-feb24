@@ -29,6 +29,9 @@ public class StudentClient2 {
 		s1.print();
 		s2.print();
 		
+		System.out.println("--------------");
+		System.out.println(s1);
+		
 	}
 
 }

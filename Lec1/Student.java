@@ -10,20 +10,18 @@ public class Student {
 		System.out.println("In default constructor");
 	}
 	
-
+	// parameterised constructor
+	Student(int age, String name){
+		this(name);			
+		System.out.println("In parameterised constructor-2");
+		this.age = age;
+	}
+	
 	Student(String name){
 		this(); // calls the default constructor
 		System.out.println("In parameterised constructor-1");
 		
 		this.name = name;
-	}
-
-	// parameterised constructor
-	Student(int age, String name){
-		this(name);
-		System.out.println("In parameterised constructor-2");
-		
-		this.age = age;
 	}
 	
 	// copy constructor
@@ -35,5 +33,10 @@ public class Student {
 	// data functions
 	public void print() {
 		System.out.println("Name:"+this.name+":Age:"+this.age);
+	}
+	
+	@Override
+	public String toString() {
+		return this.name+" is "+this.age+" years old.";
 	}
 }
