@@ -36,6 +36,7 @@ public class InheritenceDemo {
 		SDE sde1 = new SDE("Laksh", 100000, 1000);
 
 		System.out.println(sde1.getSal());
+
 	}
 
 }
