@@ -16,6 +16,7 @@ public class StudentClient {
 		System.out.println("AfterSwap");
 		s1.print();
 		s2.print();
+		
 	}
 	static void swap(Student s1, Student s2) {
 		// this will not work as we are only swapping the reference

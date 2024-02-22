@@ -4,6 +4,7 @@ public class Car {
 	String modelName;
 	String color;
 	int price;
+	public static int noOfWheels = 4;
 	
 	// Constructors
 	
@@ -51,7 +52,7 @@ public class Car {
 		price = np;
 	}
 	
-	int getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
