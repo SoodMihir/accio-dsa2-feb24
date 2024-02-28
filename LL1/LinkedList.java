@@ -22,17 +22,14 @@ public class LinkedList {
 	}
 
 	private Node head;
-	private int size;
 
 	LinkedList() {
-		this.size = 0;
 		this.head = null;
 	}
 
 	public void addLast(int val) {
 		// Add an element at the last of the LL
 		Node nn = new Node(val);
-		size++;
 		if (head == null) {
 			// we are adding the first node
 			head = nn;
@@ -54,7 +51,6 @@ public class LinkedList {
 		Node nn = new Node(val);
 		nn.next = head;
 		head = nn;
-		size++;
 	}
 
 	public void print() {
@@ -82,8 +78,14 @@ public class LinkedList {
 	}
 
 	public int size() {
-		// returns the size
-		return this.size;
+		// returns the size 
+		int size=0;
+		Node node = head;
+		while(node!=null) {
+			node = node.next;
+			size++;
+		}
+		return size;
 	}
 
 	public int deleteNode(int valueToBeRemoved) {
@@ -99,7 +101,7 @@ public class LinkedList {
 				Node next = node.next;
 				if (next.val == valueToBeRemoved) {
 					node.next = next.next;
-					size--;
+					
 					return next.val;
 				} else {
 					node = node.next;
@@ -118,17 +120,16 @@ public class LinkedList {
 		} else {
 			Node rn = head;
 			head = rn.next;
-			size--;
 
 			return rn.val;
 		}
 	}
 	
 	public int getMiddle() {
-		if(this.size==0) {
+		if(this.size()==0) {
 			return -1;
 		}
-		int mid = this.size/2;
+		int mid = this.size()/2;
 		int i=0;
 		Node node = head;
 		while(i<mid) {
@@ -137,4 +138,20 @@ public class LinkedList {
 		}
 		return node.val;
 	}
+	public void reverse() {
+		head = reverse(head);
+	}
+	private Node reverse(Node head){
+        Node prev = null;
+        Node curr = head;
+
+        while(curr!=null){
+            Node ahead = curr.next;
+            curr.next = prev;
+            
+            prev = curr;
+            curr = ahead;
+        }
+        return prev;
+    }
 }

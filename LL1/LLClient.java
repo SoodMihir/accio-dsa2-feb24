@@ -18,6 +18,11 @@ public class LLClient {
 		System.out.println("-----------");
 		System.out.println("The middle element is"+ll.getMiddle());
 		ll.printReverse();
+		System.out.println(ll.size());
+		System.out.println("-----------");
+		ll.print();
+		ll.reverse();
+		ll.print();
 		
 
 	}
